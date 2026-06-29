@@ -4,6 +4,18 @@
 ### Important Addition:
   Furthermore, I had decided to add to this project by using an IR receiver module. Laws have begun to take place that limit police chases. Also, heavy traffic often makes it difficult for emergency vehicles to reach people in need. To combat these issues, I decided to find a way to control and set the intersection lights to red at any time. Currently, intersections often have IR sensors that take in pulsating frequencies to determine if emergency vehicles are approaching, or they hold sound sensors, or networks use GPS tracking to allow for the traffic controller to communicate with vehicle locations. However, I decided to use a remote that sends signals to an IR receiver module.
 
+## Component List:
+- Elegoo Uno R3
+- KY-022 IR Receiver
+- HC-SR04 Ultrasonic Sensor
+- 2x Green LED
+- 2x Yellow LED
+- 2x Red LED
+- Elegoo IR Remote
+- 6x 330 Ohm Resistors
+- 31x Jumper Wires
+- Breadboard
+
 ### Demonstration of Sensor:
 https://github.com/user-attachments/assets/4f7a207f-c489-4b24-b5e6-5a1e746965b4
 
