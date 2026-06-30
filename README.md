@@ -23,5 +23,9 @@ https://github.com/user-attachments/assets/4f7a207f-c489-4b24-b5e6-5a1e746965b4
 https://github.com/user-attachments/assets/bb890c34-431f-4a53-b80a-ccc8376cf144
 
 ### Schematic within KiCad:
-<img width="400" height="305" alt="Screenshot 2026-06-27 012339" src="https://github.com/user-attachments/assets/41cc54f3-9b79-4210-aa05-cef265640ca1" />
+<img width="523" height="353" alt="Screenshot 2026-06-29 230305" src="https://github.com/user-attachments/assets/cb252446-077b-4b6f-ac91-d2e85f070e83" />
+
+## What have I learned?
+  After this project, I have begun to understand better how the Pulse Width Modulation (PWM) pins apply to different uses. For my specific project, I learned that they were not necessary, but I have found that they act the same way as simple digital pins with binary HIGH and LOW states. The main difference, however, is that these pins can adjust their duty cycle to have differing high pulse widths. This allows for a simulated analog voltage, in which devices that operate at input energy levels do not notice the rapid transitions between HIGH and LOW states.
+  Within the realm of IR devices, specifically the IR remote and the IR receiver module, I was able to further understand how the process communicates. Within the coding process, I had to test the play/pause button within the Serial Monitor and determine what Hex code is picked up by the IR receiver. I researched further that this shortened result is converted into binary within the processor to be understood. These digital codes come from specific pulse widths, which the IR receiver picks up through its blinking characteristic that tends to "ignore" or limit external light from interfering with the signal. Specifically, with the KY-022 IR receiver, the blinking frequency, also known as the carrier detection frequency, has a characteristic of 38 kHz.
 
