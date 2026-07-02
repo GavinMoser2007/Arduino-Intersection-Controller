@@ -30,3 +30,29 @@ https://github.com/user-attachments/assets/bb890c34-431f-4a53-b80a-ccc8376cf144
   Within the realm of IR devices, specifically the IR remote and the IR receiver module, I was able to further understand how the process communicates. Within the coding process, I had to test the play/pause button within the Serial Monitor and determine what Hex code is picked up by the IR receiver. I researched further that this shortened result is converted into binary within the processor to be understood. These digital codes come from specific pulse widths, which the IR receiver picks up through its blinking characteristic that tends to "ignore" or limit external light from interfering with the signal. Specifically, with the KY-022 IR receiver, the blinking frequency, also known as the carrier detection frequency, has a characteristic of 38 kHz.
   As for the ultrasonic sensor, I’ve learned that it can do a lot more than just detect whether something is there. Using basic kinematic ideas, you can estimate an object’s speed by looking at how its measured distance changes over a short time window. That opens the door for different applications, and in a traffic‑control setup, the sensor could basically double as a simple speed detector for cars passing through. For the HC‑SR04 specifically, the distance readings come in at around 40 Hz, while typical traffic sensors can reach closer to 100 Hz. Higher reading frequencies usually mean more accurate speed measurements because the time gap between samples is smaller. And similar to how the IR receiver works, the ultrasonic sensor sends out pulses and measures the reflected waves to figure out what’s happening in front of it.
 
+# Potential Code For Measuring Speed:
+long readDistance() {
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+
+    long duration = pulseIn(echoPin, HIGH);
+    long distance = duration * 0.034 / 2;  // cm
+    return distance;
+}
+
+float measureSpeed() {
+    long d1 = readDistance();  
+    delay(25);                 
+    long d2 = readDistance();  
+
+    long deltaD = d1 - d2;   
+    float deltaT = 0.025;  
+
+    float speed = deltaD / deltaT; // cm/s
+    return speed;
+}
+
+
